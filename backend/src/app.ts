@@ -10,11 +10,21 @@ import { profileRoutes } from "./routes/profileRoutes.js";
 import { errorMiddleware, notFound } from "./middleware/errorMiddleware.js";
 
 export const app = express();
+const allowedOrigins = new Set([
+  env.CLIENT_URL,
+  ...env.CLIENT_URLS.split(",").map((origin) => origin.trim()).filter(Boolean)
+]);
 
 app.use(helmet());
 app.use(
   cors({
-    origin: env.CLIENT_URL,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.has(origin)) {
+        callback(null, true);
+        return;
+      }
+      callback(new Error(`CORS blocked origin: ${origin}`));
+    },
     credentials: true
   })
 );

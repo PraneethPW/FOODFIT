@@ -19,7 +19,7 @@ export const askOpenRouter = async ({ intent, userPrompt, profile }: AiRequest) 
     headers: {
       Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
       "Content-Type": "application/json",
-      "HTTP-Referer": "http://localhost:5173",
+      "HTTP-Referer": env.OPENROUTER_REFERER_URL,
       "X-Title": "FOODFIT"
     },
     body: JSON.stringify({

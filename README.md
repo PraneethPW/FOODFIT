@@ -56,7 +56,7 @@ Local:
 
 Deployed:
 
-- Frontend: `https://foodfit-swart.vercel.app/`
+- Frontend: `https://foodfit-six.vercel.app/`
 - Backend: `https://foodfit-production.up.railway.app/`
 - Backend API: `https://foodfit-production.up.railway.app/api`
 
@@ -65,8 +65,8 @@ Backend:
 ```env
 DATABASE_URL="postgresql://..."
 CLIENT_URL="http://localhost:5173"
-CLIENT_URLS="http://localhost:5173,https://foodfit-swart.vercel.app"
-OPENROUTER_REFERER_URL="https://foodfit-swart.vercel.app"
+CLIENT_URLS="http://localhost:5173,https://foodfit-six.vercel.app"
+OPENROUTER_REFERER_URL="https://foodfit-six.vercel.app"
 OPENROUTER_API_KEY="sk-or-v1-..."
 JWT_ACCESS_SECRET="use-a-long-random-secret"
 JWT_REFRESH_SECRET="use-another-long-random-secret"
@@ -94,7 +94,7 @@ Local frontend: `http://localhost:5173`
 
 Local backend: `http://localhost:5000`
 
-Deployed frontend: `https://foodfit-swart.vercel.app/`
+Deployed frontend: `https://foodfit-six.vercel.app/`
 
 Deployed backend: `https://foodfit-production.up.railway.app/`
 
@@ -122,8 +122,8 @@ Deployed backend: `https://foodfit-production.up.railway.app/`
 ## Production Notes
 
 - Configure Neon connection pooling in `DATABASE_URL`.
-- Set backend `CLIENT_URL` to the deployed frontend origin: `https://foodfit-swart.vercel.app`.
-- Keep backend `CLIENT_URLS` with both local and deployed frontend origins: `http://localhost:5173,https://foodfit-swart.vercel.app`.
+- Set backend `CLIENT_URL` to the deployed frontend origin: `https://foodfit-six.vercel.app`.
+- Keep backend `CLIENT_URLS` with both local and deployed frontend origins: `http://localhost:5173,https://foodfit-six.vercel.app`.
 - Set frontend `VITE_API_URL` to the deployed backend API: `https://foodfit-production.up.railway.app/api`.
 - Keep OpenRouter keys on the server only.
 - Run Prisma migrations before deployment.
