@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Goal {
+  WEIGHT_LOSS
+  WEIGHT_GAIN
+  MAINTENANCE
+  MUSCLE_GAIN
+  ENDURANCE
+}
+
+enum Gender {
+  FEMALE
+  MALE
+  NON_BINARY
+  PREFER_NOT_TO_SAY
+}
+
+enum FoodPreference {
+  VEGETARIAN
+  NON_VEGETARIAN
+  VEGAN
+  EGGETARIAN
+  JAIN
+}
+
+model User {
+  id                  String               @id @default(cuid())
+  name                String
+  email               String               @unique
+  passwordHash        String
+  refreshTokenHash    String?
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  healthProfile       HealthProfile?
+  dietPlans           DietPlan[]
+  workoutPlans        WorkoutPlan[]
+  progress            Progress[]
+  chatHistory         ChatHistory[]
+  foodRecommendations FoodRecommendation[]
+}
+
+model HealthProfile {
+  id             String         @id @default(cuid())
+  userId         String         @unique
+  age            Int?
+  gender         Gender?
+  heightCm       Float?
+  weightKg       Float?
+  city           String?
+  foodPreference FoodPreference @default(VEGETARIAN)
+  allergies      String[]       @default([])
+  diseases       String[]       @default([])
+  goal           Goal           @default(MAINTENANCE)
+  activityLevel  String         @default("moderate")
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model DietPlan {
+  id           String   @id @default(cuid())
+  userId       String
+  title        String
+  goal         Goal
+  calories     Int
+  proteinGrams Int
+  carbsGrams   Int
+  fatGrams     Int
+  plan         Json
+  notes        String?
+  createdAt    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model WorkoutPlan {
+  id          String   @id @default(cuid())
+  userId      String
+  title       String
+  goal        Goal
+  plan        Json
+  precautions String?
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Progress {
+  id             String   @id @default(cuid())
+  userId         String
+  date           DateTime @default(now())
+  weightKg       Float?
+  calories       Int?
+  proteinGrams   Int?
+  waterLiters    Float?
+  workoutMinutes Int?
+  mood           String?
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ChatHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  role      String
+  content   String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model FoodRecommendation {
+  id        String   @id @default(cuid())
+  userId    String
+  city      String
+  items     Json
+  context   String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
