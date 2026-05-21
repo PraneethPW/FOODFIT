@@ -33,7 +33,7 @@ export const ProfilePage = () => {
 
   return (
     <div className="p-4 sm:p-8">
-      <PageHeader eyebrow="Profile setup" title="Tell FOODFIT what your body needs" subtitle="Your city, health conditions, allergies, goals, and preferences shape every AI recommendation." />
+      <PageHeader eyebrow="Profile setup" title="Tell NutriCue what your body needs" subtitle="Your city, health conditions, allergies, goals, and preferences shape every AI recommendation." />
       <form onSubmit={submit} className="grid gap-4 xl:grid-cols-[1fr_.8fr]">
         <Card className="grid gap-4 sm:grid-cols-2">
           {[
@@ -65,5 +65,4 @@ export const ProfilePage = () => {
     </div>
   );
 };
-
 

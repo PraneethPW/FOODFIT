@@ -40,7 +40,7 @@ app.use(
 );
 
 app.get("/health", (_req, res) => {
-  res.json({ status: "ok", app: "FOODFIT API" });
+  res.json({ status: "ok", app: "NutriCue API" });
 });
 
 app.use("/api/auth", authRoutes);

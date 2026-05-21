@@ -107,7 +107,7 @@ export const generateDietPlan = asyncHandler(async (req, res) => {
   );
 
   const plan = normalizeDietPlan(parseAiJson(content, {
-    title: "Balanced FOODFIT Weekly Plan",
+    title: "Balanced NutriCue Weekly Plan",
     calories: 2100,
     proteinGrams: 110,
     carbsGrams: 230,
@@ -118,7 +118,7 @@ export const generateDietPlan = asyncHandler(async (req, res) => {
 
   const data = {
       userId: req.user!.id,
-      title: String(plan.title ?? "FOODFIT Weekly Diet"),
+      title: String(plan.title ?? "NutriCue Weekly Diet"),
       goal: profile?.goal ?? Goal.MAINTENANCE,
       calories: Number(plan.calories ?? 2100),
       proteinGrams: Number(plan.proteinGrams ?? 110),
@@ -161,14 +161,14 @@ export const generateWorkoutPlan = asyncHandler(async (req, res) => {
   );
 
   const plan = normalizeWorkoutPlan(parseAiJson(content, {
-    title: "Adaptive FOODFIT Workout",
+    title: "Adaptive NutriCue Workout",
     schedule: [],
     precautions: "Start gently and consult a professional for medical restrictions."
   }));
 
   const data = {
       userId: req.user!.id,
-      title: String(plan.title ?? "FOODFIT Workout"),
+      title: String(plan.title ?? "NutriCue Workout"),
       goal: profile?.goal ?? Goal.MAINTENANCE,
       precautions: String(plan.precautions ?? ""),
       plan
@@ -245,7 +245,7 @@ export const chat = asyncHandler(async (req, res) => {
     if (!isMissingTableError(error)) throw error;
     localStore.addChat(req.user!.id, "user", message);
   }
-  const reply = await safeAsk("chat", profile, message, "A balanced FOODFIT answer: choose lean protein, high-fiber carbs, colorful vegetables, and adjust portions to your goal. For medical conditions, confirm major changes with a clinician.");
+  const reply = await safeAsk("chat", profile, message, "A balanced NutriCue answer: choose lean protein, high-fiber carbs, colorful vegetables, and adjust portions to your goal. For medical conditions, confirm major changes with a clinician.");
   try {
     await prisma.chatHistory.create({ data: { userId: req.user!.id, role: "assistant", content: reply } });
   } catch (error) {

@@ -37,7 +37,7 @@ const testimonials = [
   {
     name: "Ananya Rao",
     role: "Product Manager, Hyderabad",
-    quote: "FOODFIT finally made meal planning feel realistic. The local food suggestions are practical, not generic.",
+    quote: "NutriCue finally made meal planning feel realistic. The local food suggestions are practical, not generic.",
     result: "Lost 3.8 kg in 8 weeks"
   },
   {
@@ -55,8 +55,8 @@ const testimonials = [
 ];
 
 const faqs = [
-  ["Why does FOODFIT ask for health conditions?", "So recommendations can avoid obvious risks and include safer swaps. It is guidance, not a replacement for medical care."],
-  ["How does FOODFIT personalize plans?", "FOODFIT uses your profile, goals, allergies, city, and health conditions to generate nutrition and workout recommendations."],
+  ["Why does NutriCue ask for health conditions?", "So recommendations can avoid obvious risks and include safer swaps. It is guidance, not a replacement for medical care."],
+  ["How does NutriCue personalize plans?", "NutriCue uses your profile, goals, allergies, city, and health conditions to generate nutrition and workout recommendations."],
   ["Does it work for Indian cities and foods?", "Yes. City is part of the profile and is included when generating local food and weekly meal suggestions."]
 ];
 
@@ -95,7 +95,7 @@ export const LandingPage = () => {
               Clean health planning for real life.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              FOODFIT turns your profile, city, goals, and health context into practical diet plans, workouts, local food recommendations, and progress analytics.
+              NutriCue turns your profile, city, goals, and health context into practical diet plans, workouts, local food recommendations, and progress analytics.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/signup"><Button className="w-full sm:w-auto">Create my plan</Button></Link>
@@ -188,7 +188,7 @@ export const LandingPage = () => {
             <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-700 dark:text-blue-300">3D AI wellness console</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">A visual planning system for meals, macros, and movement.</h2>
             <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              The interactive 3D health bowl represents the FOODFIT engine: nutrition signals, workout context, local foods, and progress data converging into one weekly plan.
+              The interactive 3D health bowl represents the NutriCue engine: nutrition signals, workout context, local foods, and progress data converging into one weekly plan.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {["Protein", "Calories", "Recovery"].map((metric, index) => (
@@ -296,4 +296,3 @@ export const LandingPage = () => {
     </div>
   );
 };
-

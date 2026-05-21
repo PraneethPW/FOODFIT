@@ -7,7 +7,7 @@ type AiRequest = {
 };
 
 const systemPrompt = `
-You are FOODFIT, a careful AI fitness and nutrition assistant.
+You are NutriCue, a careful AI fitness and nutrition assistant.
 Return practical, culturally aware, city-specific advice. Respect allergies, disease risks, age, BMI, and goals.
 For medical conditions, include safety notes and recommend clinician guidance without replacing medical care.
 When asked for structured plans, return valid JSON only. Do not use placeholder text, repeated generic meals, or vague items.
@@ -20,7 +20,7 @@ export const askOpenRouter = async ({ intent, userPrompt, profile }: AiRequest) 
       Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
       "Content-Type": "application/json",
       "HTTP-Referer": env.OPENROUTER_REFERER_URL,
-      "X-Title": "FOODFIT"
+      "X-Title": "NutriCue"
     },
     body: JSON.stringify({
       model: env.OPENROUTER_MODEL,

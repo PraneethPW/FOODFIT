@@ -33,7 +33,7 @@ export const LoginPage = () => {
   };
 
   return (
-    <AuthShell title="Welcome back" subtitle="Sign in securely to access your FOODFIT dashboard.">
+    <AuthShell title="Welcome back" subtitle="Sign in securely to access your NutriCue dashboard.">
       <form onSubmit={submit} className="mt-6 space-y-4">
         <input required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-blue-500 dark:border-white/10 dark:bg-white/10" placeholder="Email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
         <div className="relative">

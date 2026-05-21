@@ -3,7 +3,7 @@ import { prisma } from "./config/prisma.js";
 import { app } from "./app.js";
 
 const server = app.listen(env.PORT, () => {
-  console.log(`FOODFIT API running on port ${env.PORT}`);
+  console.log(`NutriCue API running on port ${env.PORT}`);
 });
 
 const shutdown = async () => {

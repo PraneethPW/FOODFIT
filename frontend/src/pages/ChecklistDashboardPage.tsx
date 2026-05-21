@@ -57,7 +57,7 @@ export const ChecklistDashboardPage = () => {
 
   return (
     <div className="p-3 sm:p-6 lg:p-8">
-      <PageHeader eyebrow="Checklist dashboard" title="Track what you actually completed" subtitle="Mark each planned meal and workout as done or missed. FOODFIT uses this adherence report to suggest realistic diet and workout changes." />
+      <PageHeader eyebrow="Checklist dashboard" title="Track what you actually completed" subtitle="Mark each planned meal and workout as done or missed. NutriCue uses this adherence report to suggest realistic diet and workout changes." />
 
       <div className="mb-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         <Card><p className="text-sm font-bold text-black/55 dark:text-white/55">Overall</p><p className="mt-2 text-3xl font-black sm:text-4xl text-mint">{completion}%</p></Card>
@@ -112,4 +112,3 @@ export const ChecklistDashboardPage = () => {
     </div>
   );
 };
-

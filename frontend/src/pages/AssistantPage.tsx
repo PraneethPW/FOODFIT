@@ -53,7 +53,7 @@ export const AssistantPage = () => {
               {message.role === "user" && <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-coral/20 text-coral"><User size={18} /></span>}
             </div>
           ))}
-          {loading && <div className="rounded-2xl bg-black/5 px-4 py-3 text-sm font-semibold dark:bg-white/10">FOODFIT is thinking...</div>}
+          {loading && <div className="rounded-2xl bg-black/5 px-4 py-3 text-sm font-semibold dark:bg-white/10">NutriCue is thinking...</div>}
           <div ref={bottomRef} />
         </div>
         <form onSubmit={send} className="flex gap-3 border-t border-black/10 p-4 dark:border-white/10">

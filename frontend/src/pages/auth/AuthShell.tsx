@@ -25,7 +25,7 @@ export const AuthShell = ({ title, subtitle, children }: { title: string; subtit
         <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{subtitle}</p>
         {children}
       </div>
-      <Link to="/" className="mt-5 block text-center text-sm font-bold text-slate-500 dark:text-slate-400">Back to FOODFIT</Link>
+      <Link to="/" className="mt-5 block text-center text-sm font-bold text-slate-500 dark:text-slate-400">Back to NutriCue</Link>
       </div>
     </div>
   </div>

@@ -42,7 +42,7 @@ export const SignupPage = () => {
   };
 
   return (
-    <AuthShell title="Create your account" subtitle="Set up your secure FOODFIT account and build your personalized health profile.">
+    <AuthShell title="Create your account" subtitle="Set up your secure NutriCue account and build your personalized health profile.">
       <form onSubmit={submit} className="mt-6 space-y-4">
         <label className="block text-sm font-bold text-slate-700 dark:text-slate-200">Full name<input required minLength={2} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-blue-500 dark:border-white/10 dark:bg-white/10" placeholder="Your full name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></label>
         <label className="block text-sm font-bold text-slate-700 dark:text-slate-200">Email<input required className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-blue-500 dark:border-white/10 dark:bg-white/10" placeholder="you@example.com" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></label>

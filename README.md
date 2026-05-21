@@ -1,6 +1,6 @@
-# FOODFIT
+# NutriCue
 
-FOODFIT is a production-grade AI-powered fitness and lifestyle web application built with React, TypeScript, Vite, Node.js, Express, Prisma, PostgreSQL Neon, OpenRouter, TailwindCSS, Framer Motion, Zustand, Recharts, Lucide, and React Three Fiber.
+NutriCue is a production-grade AI-powered fitness and lifestyle web application built with React, TypeScript, Vite, Node.js, Express, Prisma, PostgreSQL Neon, OpenRouter, TailwindCSS, Framer Motion, Zustand, Recharts, Lucide, and React Three Fiber.
 
 ## Features
 
@@ -20,7 +20,7 @@ FOODFIT is a production-grade AI-powered fitness and lifestyle web application b
 ## Project Structure
 
 ```txt
-FOODFIT/
+NutriCue/
   backend/
     prisma/schema.prisma
     src/
@@ -83,7 +83,7 @@ Before production, replace both JWT secrets with strong random values and rotate
 ## Installation
 
 ```bash
-cd C:\Users\prane\COHORT-HARKIRAT\FOODFIT
+cd C:\Users\prane\COHORT-HARKIRAT\NutriCue
 npm run install:all
 npm run db:generate
 npm run db:migrate
